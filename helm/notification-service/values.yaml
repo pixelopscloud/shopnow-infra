@@ -1,0 +1,26 @@
+replicaCount: 1
+
+image:
+  repository: pixelopscloud/shopnow-notification-service
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 3005
+
+env:
+  PORT: "3005"
+  DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/shopnow_notifications"
+  SMTP_HOST: "smtp.gmail.com"
+  SMTP_PORT: "587"
+  SMTP_USER: "your_email@gmail.com"
+  SMTP_PASS: "your_app_password"
+
+resources:
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "200m"

@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: pixelopscloud/shopnow-order-service
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 3003
+
+env:
+  PORT: "3003"
+  DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/shopnow_orders"
+
+resources:
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "200m"

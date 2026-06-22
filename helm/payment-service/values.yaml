@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: pixelopscloud/shopnow-payment-service
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 3004
+
+env:
+  PORT: "3004"
+  DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/shopnow_payments"
+
+resources:
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "200m"
