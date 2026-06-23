@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: pixelopscloud/shopnow-user-service
-  tag: latest
+  tag: "f9d32df"
   pullPolicy: Always
 
 service:
