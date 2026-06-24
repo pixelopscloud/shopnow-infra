@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: pixelopscloud/shopnow-frontend
-  tag: "05d51eb"
+  tag: "2b5d015"
   pullPolicy: Always
 
 service:
